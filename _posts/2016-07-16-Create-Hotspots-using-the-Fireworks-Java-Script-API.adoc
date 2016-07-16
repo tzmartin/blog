@@ -1,0 +1,17 @@
+:title: Create Hotspots using the Fireworks JavaScript API
+
+If you are a designer who happens to know JavaScript, you may be happy to know that Fireworks has a JavaScript API. This tip came from Justin Lee, from Herxun, who used it to create hotspots on an image of the Taipei Metro map and then used the vectors to embedded clickable regions within a mobile app. The result was impressive. You could touch areas of the map and view contextual info, like estimated wait times, etc.
+
+I was impressed by how Justin approached the problem of data transformation, considering how painful it can be mobilize vectors of dynamic data. He used Adobe Fireworks, a graphics app. Fireworks has a JavaScript API the he used to perform data processing. When you clicked a region on the image map, contextual information could be displayed. It was an elegant approach that saved lots of time.
+
+Here is how he did it (per his email to me):
+
+Because Taipei Flora Expo closed a few days ago, the official taipei metro route map changes a lot. With the fireworks work flow, It only take me less than half hour to fix it.
+
+Obtain the Fireworks Console: http://johndunning.com/fireworks/about/FWConsole
+
+Then draw hotspots on the canvas and select all of them.
+
+After that, open the Fireworks Console, paste below code to in it.
+
+I haven’t tested this yet, but you I can foresee several use cases.  I may write an app that demonstrates this further.  In the mean time, you can download the map here and try it yourself. Pretty slick.
