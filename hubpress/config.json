@@ -9,7 +9,7 @@
     "description": "Blog of tz",
     "logo": "http://autowakinsimsolutions.com/wp-content/uploads/2013/01/blog-content-logo-425x215.png",
     "cover": "http://2.bp.blogspot.com/-WxTp19q1Z5w/UcbZp8hkFfI/AAAAAAAAQDc/Ho92XkGevD0/s1600/watermarked_cover333.jpg",
-    "postsPerPage": "5",
+    "postsPerPage": "1",
     "disqus": "tzmartin"
   },
   "socialnetwork": {
