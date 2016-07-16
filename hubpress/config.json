@@ -12,7 +12,13 @@
     "postsPerPage": "5",
     "disqus": "tzmartin"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "terryzmartin@gmail.com",
+    "twitter": "tzmartin",
+    "linkedin": "terryzmartin",
+    "facebook": "tzmartin",
+    "github": "tzmartin"
+  },
   "theme": {
     "name": "casper"
   }
