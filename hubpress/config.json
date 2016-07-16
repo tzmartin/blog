@@ -4,7 +4,16 @@
     "repositoryName": "hubpress.io",
     "branch": "gh-pages"
   },
+  "site": {
+    "title": "tzmartin.com",
+    "description": "Blog of tz",
+    "logo": "http://autowakinsimsolutions.com/wp-content/uploads/2013/01/blog-content-logo-425x215.png",
+    "cover": "http://stockphotos.yaymicro.com/free-facebook-covers/facebook-cover-blue-sky-clouds.jpg",
+    "postsPerPage": "5",
+    "disqus": "tzmartin"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
