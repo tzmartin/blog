@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Create Hotspots using the Fireworks JavaScript API</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://tzmartin.github.io/hubpress.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//tzmartin.github.io/hubpress.io/themes/tz/assets/css/screen.css?v=1468733738850" />
+
+    <link rel="canonical" href="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="tzmartin.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create Hotspots using the Fireworks JavaScript API" />
+    <meta property="og:description" content="If you are a designer who happens to know JavaScript, you may be happy to know that Fireworks has a JavaScript API. This tip came from Justin Lee, from Herxun, who used it to create hotspots on an image of the Taipei Metro map and then used the vectors to" />
+    <meta property="og:url" content="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Create Hotspots using the Fireworks JavaScript API" />
+    <meta name="twitter:description" content="If you are a designer who happens to know JavaScript, you may be happy to know that Fireworks has a JavaScript API. This tip came from Justin Lee, from Herxun, who used it to create hotspots on an image of the Taipei Metro map and then used the vectors to" />
+    <meta name="twitter:url" content="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="tzmartin.com" href="https://tzmartin.github.io/hubpress.io/rss/" />
+</head>
+<body class="post-template  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://tzmartin.github.io/hubpress.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2016-07-16"><a href="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html">July 16, 2016</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Create Hotspots using the Fireworks JavaScript API</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="paragraph">
+<p>If you are a designer who happens to know JavaScript, you may be happy to know that Fireworks has a JavaScript API. This tip came from Justin Lee, from Herxun, who used it to create hotspots on an image of the Taipei Metro map and then used the vectors to embedded clickable regions within a mobile app. The result was impressive. You could touch areas of the map and view contextual info, like estimated wait times, etc.</p>
+</div>
+<div class="paragraph">
+<p>I was impressed by how Justin approached the problem of data transformation, considering how painful it can be mobilize vectors of dynamic data. He used Adobe Fireworks, a graphics app. Fireworks has a JavaScript API the he used to perform data processing. When you clicked a region on the image map, contextual information could be displayed. It was an elegant approach that saved lots of time.</p>
+</div>
+<div class="paragraph">
+<p>Here is how he did it (per his email to me):</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Because Taipei Flora Expo closed a few days ago, the official taipei metro route map changes a lot. With the fireworks work flow, It only take me less than half hour to fix it.
+Obtain the Fireworks Console: <a href="http://johndunning.com/fireworks/about/FWConsole" class="bare">http://johndunning.com/fireworks/about/FWConsole</a>
+Then draw hotspots on the canvas and select all of them.
+After that, open the Fireworks Console, paste below code to in it:</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var hotspots = [];
+for(var i=0;i {
+var hotspot={};
+hotspot.id = sel[i].altText;
+hotspot.l = sel[i].pixelRect.left;
+hotspot.t = sel[i].pixelRect.top;
+hotspot.r = sel[i].pixelRect.right;
+hotspot.b = sel[i].pixelRect.bottom;
+hotspots.push(hotspot);
+}
+
+console.log("nhotspots = ");
+console.log(hotspots);</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Then click ‘Eval’ Button, you will get all coordinates of the hotspots in JSON format.
+I hope this may help you sometime.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I haven’t tested this yet, but you I can foresee several use cases.  I may write an app that demonstrates this further.  In the mean time, you can download the map here and try it yourself. Pretty slick.</p>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API&url=https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <a href="https://tzmartin.github.io/hubpress.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
+
+                <a href="https://tzmartin.github.io/hubpress.io/author/tzmartin/" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/139472?v&#x3D;3');">
+                        <img src="https://avatars.githubusercontent.com/u/139472?v&#x3D;3" alt="TZ Martin">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="https://tzmartin.github.io/hubpress.io/author/tzmartin/" class="url n">TZ Martin</a></h4>
+                    Mountain View, CA<br>
+                    <a href="http://twitter.com/tzmartin" class="js-remove-domain-schema">http://twitter.com/tzmartin</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    Founder of Semantic Press.
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    <section class="post-comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = 'tzmartinblog'; // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html&amp;description=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API-tzmartin.com " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <a href="https://tzmartin.github.io/hubpress.io" id="blog_badge">
+            <span style="background-image: url('https://avatars0.githubusercontent.com/u/139472?v&#x3D;3&amp;s&#x3D;800');">tzmartin.com</span>
+        </a>
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+
+</body>
+</html>
