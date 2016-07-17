@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="https://tzmartin.github.io/hubpress.io/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
-    <link rel="stylesheet" type="text/css" href="//tzmartin.github.io/hubpress.io/themes/tz/assets/css/screen.css?v=1468730839253" />
+    <link rel="stylesheet" type="text/css" href="//tzmartin.github.io/hubpress.io/themes/tz/assets/css/screen.css?v=1468733668690" />
 
     <link rel="canonical" href="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" />
     <meta name="referrer" content="origin" />
@@ -43,7 +43,7 @@ null
     <article role="main" class="">
         <header>
             <a href="https://tzmartin.github.io/hubpress.io" id="home_link">«</a>
-            <div class="meta"><time datetime="2016-07-16"><a href="/">July 16, 2016</a></time> <span class="count" id="js-reading-time"></span></div>
+            <div class="meta"><time datetime="2016-07-16"><a href="https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html">July 16, 2016</a></time> <span class="count" id="js-reading-time"></span></div>
             <h1>Create Hotspots using the Fireworks JavaScript API</h1>
         </header>
 
@@ -57,17 +57,40 @@ null
 <div class="paragraph">
 <p>Here is how he did it (per his email to me):</p>
 </div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>Because Taipei Flora Expo closed a few days ago, the official taipei metro route map changes a lot. With the fireworks work flow, It only take me less than half hour to fix it.</p>
+<p>Because Taipei Flora Expo closed a few days ago, the official taipei metro route map changes a lot. With the fireworks work flow, It only take me less than half hour to fix it.
+Obtain the Fireworks Console: <a href="http://johndunning.com/fireworks/about/FWConsole" class="bare">http://johndunning.com/fireworks/about/FWConsole</a>
+Then draw hotspots on the canvas and select all of them.
+After that, open the Fireworks Console, paste below code to in it:</p>
 </div>
-<div class="paragraph">
-<p>Obtain the Fireworks Console: <a href="http://johndunning.com/fireworks/about/FWConsole" class="bare">http://johndunning.com/fireworks/about/FWConsole</a></p>
+</blockquote>
 </div>
-<div class="paragraph">
-<p>Then draw hotspots on the canvas and select all of them.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var hotspots = [];
+for(var i=0;i {
+var hotspot={};
+hotspot.id = sel[i].altText;
+hotspot.l = sel[i].pixelRect.left;
+hotspot.t = sel[i].pixelRect.top;
+hotspot.r = sel[i].pixelRect.right;
+hotspot.b = sel[i].pixelRect.bottom;
+hotspots.push(hotspot);
+}
+
+console.log("nhotspots = ");
+console.log(hotspots);</code></pre>
 </div>
+</div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>After that, open the Fireworks Console, paste below code to in it.</p>
+<p>Then click ‘Eval’ Button, you will get all coordinates of the hotspots in JSON format.
+I hope this may help you sometime.</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>I haven’t tested this yet, but you I can foresee several use cases.  I may write an app that demonstrates this further.  In the mean time, you can download the map here and try it yourself. Pretty slick.</p>
@@ -79,7 +102,7 @@ null
                 <span aria-hidden="true" data-icon="S"></span>
                 <strong>Share</strong>
             </a>
-            <a href="http://twitter.com/share?text=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API&url=https://tzmartin.github.io/hubpress.io/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+            <a href="http://twitter.com/share?text=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API&url=https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
                 <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
             </a>
         </menu>
@@ -160,7 +183,7 @@ null
                     </div>
 
                     <div id="pinit-btn">
-                        <a href="//pinterest.com/pin/create/button/?url=https://tzmartin.github.io/hubpress.io/&amp;description=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API-tzmartin.com " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <a href="//pinterest.com/pin/create/button/?url=https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html&amp;description=Create%20Hotspots%20using%20the%20Fireworks%20JavaScript%20API-tzmartin.com " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
                         <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
                     </div>
                 </div>
