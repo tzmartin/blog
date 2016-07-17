@@ -798,6 +798,14 @@ body.user article header h1 {
     margin: 0;
     font-size: 32px
 }
+
+body article .image-holder {
+  height: 300px;
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+  max-width: 680px;
+}
+
 body.user article .image-holder {
     height: 300px;
     margin: 0 auto 30px auto;
