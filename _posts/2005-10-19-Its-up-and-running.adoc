@@ -1,7 +1,14 @@
-= Hello
-:hp-tags: HubPress, Blog, Open Source
-:published_at: 2005-05-01
+= It’s up and running…
+:hp-tags: AJAX, Domain Labs, FastCMS
+:published_at: 2005-10-19
 :hp-image: https://roon.ghost.io/content/images/2014/11/roon3.jpeg
 
-Just a test.
+Ok. I’ve been working on my personal site for about 3 weeks now. Developed the framework (and prototype) for a front-end CMS loader using nifty AJAX.  Then, I ran into a snag…
 
+it is not compatible with IE. Well, it’s compatible, but not visually. It’s a stylesheet issue (thankfully) so it will take a bit to fix the bug.
+
+I’ve decided to create my blog and default IE users to it for now. So if you want to view the site with Firefox, you’ll get a peek at what I call FastCMS. BTW: it’s reeeally fast and simple. I’ll be posting some features about it soon, along with screenshots for those that don’t have Firefox.
+
+UPDATE: I’ve decided not publish the “FastCMS” prototype on my personal site. Sorry. It will be unveiled as part of Domain Labs. All users will default to the blog from the main page.
+
+That’s about it for now. Welcome to my site!
