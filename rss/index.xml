@@ -1,3 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[tzmartin.com]]></title><description><![CDATA[tzMartin :: Programmer, Thinker and Artist]]></description><link>https://tzmartin.github.io/hubpress.io</link><image><url>http://2.bp.blogspot.com/-WxTp19q1Z5w/UcbZp8hkFfI/AAAAAAAAQDc/Ho92XkGevD0/s1600/watermarked_cover333.jpg</url><title>tzmartin.com</title><link>https://tzmartin.github.io/hubpress.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Jul 2016 05:34:39 GMT</lastBuildDate><atom:link href="https://tzmartin.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[tzmartin.com]]></title><description><![CDATA[tzMartin :: Programmer, Thinker and Artist]]></description><link>https://tzmartin.github.io/hubpress.io</link><image><url>http://2.bp.blogspot.com/-WxTp19q1Z5w/UcbZp8hkFfI/AAAAAAAAQDc/Ho92XkGevD0/s1600/watermarked_cover333.jpg</url><title>tzmartin.com</title><link>https://tzmartin.github.io/hubpress.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Jul 2016 05:35:38 GMT</lastBuildDate><atom:link href="https://tzmartin.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello]]></title><description><![CDATA[<div class="paragraph">
 <p>Just a test.</p>
-</div>]]></description><link>https://tzmartin.github.io/hubpress.io/2016/07/16/Hello.html</link><guid isPermaLink="true">https://tzmartin.github.io/hubpress.io/2016/07/16/Hello.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ Blog]]></category><category><![CDATA[ Open Source]]></category><dc:creator><![CDATA[TZ Martin]]></dc:creator><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://tzmartin.github.io/hubpress.io/2016/07/16/Hello.html</link><guid isPermaLink="true">https://tzmartin.github.io/hubpress.io/2016/07/16/Hello.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ Blog]]></category><category><![CDATA[ Open Source]]></category><dc:creator><![CDATA[TZ Martin]]></dc:creator><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Create Hotspots using the Fireworks JavaScript API]]></title><description><![CDATA[<div class="paragraph">
+<p>If you are a designer who happens to know JavaScript, you may be happy to know that Fireworks has a JavaScript API. This tip came from Justin Lee, from Herxun, who used it to create hotspots on an image of the Taipei Metro map and then used the vectors to embedded clickable regions within a mobile app. The result was impressive. You could touch areas of the map and view contextual info, like estimated wait times, etc.</p>
+</div>
+<div class="paragraph">
+<p>I was impressed by how Justin approached the problem of data transformation, considering how painful it can be mobilize vectors of dynamic data. He used Adobe Fireworks, a graphics app. Fireworks has a JavaScript API the he used to perform data processing. When you clicked a region on the image map, contextual information could be displayed. It was an elegant approach that saved lots of time.</p>
+</div>
+<div class="paragraph">
+<p>Here is how he did it (per his email to me):</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Because Taipei Flora Expo closed a few days ago, the official taipei metro route map changes a lot. With the fireworks work flow, It only take me less than half hour to fix it.
+Obtain the Fireworks Console: <a href="http://johndunning.com/fireworks/about/FWConsole" class="bare">http://johndunning.com/fireworks/about/FWConsole</a>
+Then draw hotspots on the canvas and select all of them.
+After that, open the Fireworks Console, paste below code to in it:</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var hotspots = [];
+for(var i=0;i {
+var hotspot={};
+hotspot.id = sel[i].altText;
+hotspot.l = sel[i].pixelRect.left;
+hotspot.t = sel[i].pixelRect.top;
+hotspot.r = sel[i].pixelRect.right;
+hotspot.b = sel[i].pixelRect.bottom;
+hotspots.push(hotspot);
+}
+
+console.log("nhotspots = ");
+console.log(hotspots);</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Then click ‘Eval’ Button, you will get all coordinates of the hotspots in JSON format.
+I hope this may help you sometime.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I haven’t tested this yet, but you I can foresee several use cases.  I may write an app that demonstrates this further.  In the mean time, you can download the map here and try it yourself. Pretty slick.</p>
+</div>]]></description><link>https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html</link><guid isPermaLink="true">https://tzmartin.github.io/hubpress.io/2016/07/16/Create-Hotspots-using-the-Fireworks-Java-Script-API.html</guid><dc:creator><![CDATA[TZ Martin]]></dc:creator><pubDate>Sat, 16 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>
