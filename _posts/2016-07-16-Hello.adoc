@@ -1,5 +1,7 @@
 = Hello
 :hp-tags: HubPress, Blog, Open Source
 
+:hp-image: https://roon.ghost.io/content/images/2014/11/roon3.jpeg
+
 Just a test.
 
